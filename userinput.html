@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taking Input from user(1)</title>
+    <style>
+        #change{
+            margin: auto;
+            text-align: center;
+            background-color: aqua;
+            width: 300px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Taking input from user(1)</h1>
+    <table>
+        <tr><th>We take input from the user by:-</th></tr>
+        <tr><td>1.prompt(take letter and number asa text and concatinate them)</td></tr>
+        <tr><td>2.parseInt(prompt)  -(take only number as it is int(integer))</td></tr>
+        <tr><td>3.parseFloat(prompt)  -(take the number in decimal form)</td></tr>
+        <tr><td>4.eval(can take any type of number to calculate)</td></tr>
+    </table>
+    <h2>1. Calculated by prompt</h2>
+    <p>here prompt is not able to addition the number and done the concatination of a and b bcoz prompt take any number and letter as text</p>
+    <script> 
+        a=prompt("Enter first number:");
+        b=prompt("Enter second number:");
+        document.write("<h2>Addition:</h2>", a+b);
+    </script> 
+
+    <h2>2. parseInt(prompt)</h2>
+    <p>parseInt taking the number as integer and ignore the decimal value</p>
+    <script>
+        x=parseInt(prompt("Enter first number:"));
+        y=parseInt(prompt("Enter second number:"));
+        document.write("<h2> Addition:</h2>", x+y);
+    </script>
+
+    <h2>3. parseFloat(prompt)</h2>
+    <p>it taking decimal value too</p>
+    <script>
+        p=parseFloat(prompt("Enter first parsefloat number:"));
+        q=parseFloat(prompt("Enter second parsefloat number:"));
+        document.write("<h2>Addition:</h2>", p+q);
+    </script> 
+
+     <h2>4.eval</h2>
+    <p>it can take any type of mathematical number</p>
+    <script>
+        r=eval(prompt("Enter eval number:"));
+        s=eval(prompt("Enter eval 2nd number:"));
+        document.write("<h2> Addition:</h2>", r+s);
+    </script>
+    <h1>Now we change the text by clcking on button</h1>
+    <h3 id="change" onclick="this.innerHTML='YOU CHANE ME IN RED COLOR';">Click on me to chnage the text</h3>
+</body>
+</html>
+<script src="userinput.js"></script>
