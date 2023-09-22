@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marksheet</title>
+    <style>
+        *{width: 100%;
+            background-color: rgb(240, 227, 227);
+        }
+        #mainame{
+            text-align:center;
+            width: 90% ;
+            height: 160px;
+            margin: auto;
+            background-color: brown;
+            color: rgb(255, 240, 240);
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+        #grid{
+            margin: auto;margin-top: 20px;
+            border: 2px solid white;
+            width: 35%;
+            padding: 50px;
+            font-size: 22px;
+            color: brown;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: auto;
+        }
+        #grid>div{
+            margin: 10px;
+        }
+        #gender{
+            width: 10%;
+        }
+        input{
+            padding: 5px;
+            font-size: 20px;
+            border: 1px solid brown;
+            margin-bottom: 10px;
+        }
+        #fieldset{
+            width: 60%;
+            /* height: 300px; */
+            /* margin: auto; */
+            /* border: 2px solid brown; */
+            padding: 0px 50px 0px 50px;
+        }
+        #fieldset>div{
+            margin: 20px 5px;
+        }
+        .submit{
+            margin-top: 10px;
+            font-size: 20px;
+            padding: 5px 15px 5px 15px;
+            color:rgb(255, 240, 240);
+            background-color: brown;
+            border: 1px solid white;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+       .seprator{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: brown;
+        text-shadow:2px 2px white;
+       }
+       span{
+        font-size: 15px;
+        font-style: italic;
+        /* color: red; */
+        position: absolute;
+       }
+       #final{
+        width: 80%;
+        height: 550px;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        /* border: 1px solid black; */
+       }
+       #submarks{
+        width: 40%;
+        padding: 10px
+        ;
+        /* border: 1px solid white; */
+        /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
+        font-size: 22px;
+       }
+       #submarks>div{
+        width: 40%;
+        color: brown;
+       }
+       #percentage{
+        width: 40%;
+        /* border: 1px solid white; */
+        /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
+       }
+       td{
+        width: 35%;
+        text-align: center;
+        border: 1px solid brown;
+        font-size: 22px;
+        padding: 10px 15px;
+        color: brown;
+       }   
+       #pic{
+        margin: auto;
+        width: 60%;
+        height: 50px;
+       }   
+    </style>
+</head>
+<body>
+    <h1 id="mainame">Shiv Public School
+        <br>
+        R.K.Puram,New Delhi
+        <br>
+    
+        <img style="width: 100px; height: 90px; margin-top: 10px ;" src="schoollogo.png" alt="logo">
+    </h1>
+
+    <div class="seprator"><h1>Student Marksheet Portal:-</h1></div>
+
+    <div id="grid">
+        <div><label>Student's Name:</label>
+        <input type="text" id="name" placeholder="Full name" required onkeyup="validname()">
+        <span id="nameerror"></span></div>
+
+       <div><label>Gender:</label>
+        <table id="gender">
+            <tr> <td> Male: </td> <td><input type="radio" name="gender" id="male" required></td> </tr>
+            <tr> <td> Female: </td> <td><input type="radio" name="gender" id="female" required> </td></tr>
+            <tr> <td> others:</td> <td><input type="radio" name="gender" id="others" required></td></tr>
+        </table>
+        </div>
+        
+        <div>
+        <label>Student's Class:</label>
+        <input type="text" id="class" placeholder="5th" required onkeyup="validclass()">
+        <span id="classerror"></span></div>
+
+        <div>
+        <label>Roll Number    :</label>
+        <input type="number" id="rollno" placeholder="1-25" required onkeyup="validrollno()">
+        <span id="rollerror"></span></div>
+
+        <div>
+        <label> Class-Section:</label>
+        <input type="text" id="section" placeholder="A to D" required onkeyup="validsection()">
+        <span id="sectionerror"></span></div>
+
+        <hr noshade color="brown" >
+
+        <div id="fieldset">
+            <legend> <u> Parents contact details:-</u></legend>
+
+            <div><label>Name:</label>
+            <input type="text" id="pname" placeholder="Full name" required onkeyup="validpname()">
+            <span id="pnerror"></span></div>
+
+            <div><label>Phone no.:</label>
+            <input type="tel" id="phn" placeholder="123-4560-789" required onkeyup="validphn()">
+            <span id="phnerror"></span></div>
+
+            <div><label>Email Address:</label>
+            <input type="email" id="email" placeholder="shriannu@gmail.com" required onkeyup="validemail()">
+            <span id="emailerror"></span></div>
+        </div>
+
+        <button class="submit" onclick= "return validationform()">Submit</button>
+    </div>
+    
+    <div class="seprator"><h1>Final Marksheet:-</h1></div>
+
+    <div id="final">
+        <div id="submarks">
+            <h2 class="seprator">Subject and marks</h2>
+           <div>
+            <label>Physics:</label>
+            <input type="number" id="phy" placeholder="marks">
+           </div>
+           <div>
+            <label>Chemistry:</label>
+            <input type="number" id="chem" placeholder="marks">
+           </div>
+           <div>
+            <label>English:</label>
+            <input type="number" id="eng" placeholder="marks">
+           </div>
+           <div>
+            <label>Mathematics:</label>
+            <input type="number" id="math" placeholder="marks">
+           </div>
+           <div>
+            <label>Computer Science:</label>
+            <input type="number" id="cs" placeholder="marks">
+           </div>
+           <div><button class="submit" onclick="calculate()">Calculate</button></div>
+        </div>
+        <div id="percentage">
+            <h2 class="seprator">Final Report:-</h2>
+            <table>
+                <tr>
+                    <td>Total Marks:</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Obtained Marks:</td>
+                    <td id="obtain"></td>
+                </tr>
+                <tr>
+                    <td>percentage:</td>
+                    <td id="per"></td>
+                </tr>
+                <tr>
+                    <td>Grade:</td>
+                    <td id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Remarks :</td>
+                    <td id="remarks"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="pic">
+        <img id="image" >
+    </div>
+</body>
+</html>
+<script src="marksheet.js"></script>
