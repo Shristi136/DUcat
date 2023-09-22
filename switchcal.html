@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Calculator</title>
+</head>
+<style>
+    body{
+        width: 100%;
+    }
+    #cal{
+        border: 1px solid blue;
+        background-color:#faf6ca;
+        text-align: center;
+        width: 80%;
+        height: 200px;
+        margin: auto;
+    }
+    h1{
+        color: blue;
+    }
+    input,select{
+        font-size: 20px;
+        padding:10px;
+        border: 1px solid blue;
+        color:orangered;
+    }
+   
+   
+    
+   
+</style>
+<body>
+    <div id="cal">
+        <h1>Switch Case Calculator</h1>
+        <div>
+            <input type="number" placeholder="enter first number" id="first">
+            <select name="method" id="operator" type="submit">
+                <option value="method">Method</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" placeholder="enter second number" id="second">
+            <input type="button" value="=" onclick="calculate()">
+            <input type="number" id="result">
+        </div>
+    </div>
+    <br><br>
+    <div>
+    <div>
+        <h1 style="text-align: center;">Counting by for Loop</h1>
+        <span style="font-size: 20px; color: orangered;">1. Assending order seriers for multiple of 5:-</span>
+        <input type="number" placeholder="Enter a multiple of 5" id="count">
+        <input type="button" value="click on me" onclick="counting()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size:20px; color:orangered;">2. decending order seriers  of 3:-</span>
+        <input type="number" placeholder="enter a multiple of 3" id="three">
+        <input type="button" value="click on me" onclick="tin()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size:20px; color:orangered;">3. Squares of the number :-</span>
+        <input type="number" placeholder="enter a number" id="sqq">
+        <input type="button" value="click on me" onclick="square()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">4. Cube of the numbers:-</span>
+        <input type="number" placeholder="Enter a number" id="cube">
+        <input type="button" value="click on me" onclick="cube()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">5. Fibonacci seriers :-</span>
+        <input type="number" placeholder="Enter a number" id="fibo">
+        <input type="button" value="click on me" onclick="fibonacci()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">6. Table by Loop:-</span>
+        <input type="number" placeholder="Enter a number for table" id="table">
+        <input type="button" value="click on me" onclick="table()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">6. Table by Loop(backtick):-</span>
+        <input type="number" placeholder="Enter a number for table" id="backtick">
+        <input type="button" value="click on me" onclick="backtick()">
+    </div>
+    <br> <br>
+    <h1 style="text-align: center;">Nested Loop</h1>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">7. tables in Nested loop with while:-</span>
+        <input type="number" placeholder="1st no." id="phla">
+        <input type="number" placeholder="2nd no." id="dusra">
+        <input type="button" value="click on me" onclick="tab()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">8. tables in Nested loop with for:-</span>
+        <input type="number" placeholder="1st no." id="n1">
+        <input type="number" placeholder="2nd no." id="n2">
+        <input type="button" value="click on me" onclick="tables()">
+    </div>
+    <br> <br>
+    <hr>
+    <div>
+        <span style="font-size: 20px; color:orangered;">9. Number pyramid:-</span>
+        <input type="button" value="click me to see the magic" onclick="pyramid()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">10. Number pyramid type 2:-</span>
+        <input type="button" value="click me to see type 2" onclick="type2()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">11. Number pyramid type 3:-</span>
+        <input type="button" value="click me to see type 3" onclick="type3()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">12. number pyramid type 4:-</span>
+        <input type="button" value="click me to see type 4" onclick="type4()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">13. star pyramid:-</span>
+        <input type="button" value="click me for stars" onclick="star()">
+    </div>
+    <br> <br>
+    <br> <br>
+    <div>
+        <h2>ASCII:-American standard code for information interchange</h2>
+        <p> Press the buttob to check the ASCII code in js with the limitation of 65535</p>
+        <h2>You can check here:-</h2>
+        <input type="button" value="PRESS" onclick="utf()">
+    </div>
+    <br> <br>
+    <div>
+        <span style="font-size: 20px; color: orangered;">14. alphabet pyramid </span>
+        <input type="button" value="click me to see" onclick="alphabet()">
+    </div>
+    <br> <br>
+    <h1 style="text-align: center;">ARRAY{THE BLOCK MAGIC}</h1>
+    <div>
+        <input type="button" value="array" onclick="array1()">
+    </div>
+    <br> <br>
+    <div>
+        <input type="button" value="object" onclick="obj()">
+    </div>
+    </div>
+</body>
+</html>
+<script src="switchcal.js"></script>
