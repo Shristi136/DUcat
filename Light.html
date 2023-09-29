@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb</title>
+</head>
+<style>
+    body{
+        background-color: rgb(47, 48, 151);
+
+    }
+    h1{
+    color:rgb(248, 183, 5);
+    text-align: center;
+    margin-top: 20px;
+    }
+    #bulb{
+        width: 200px;
+        height: 200px;
+    }
+    .center{
+        text-align: center;
+    }
+    button{
+        width: 120px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: rgb(248, 183, 5); 
+        font-size: 20px;
+        font-weight: bolder;
+        color: aliceblue;
+        box-shadow: rgba(255, 252, 252, 0.35) 0px 5px 15px;
+        border: 1px solid gray;
+    }
+
+</style>
+<body>
+
+    <h1>Can you trun on the light?</h1>
+    <div class="center">
+    <button onclick="document.getElementById('bulb').src='images/lightonpic.png' ">Light On</button>
+    <img src="images/lightoffpic.png" alt="light off image" id="bulb">
+    <button onclick="document.getElementById('bulb').src='images/lightoffpic.png' ">Light Off</button>
+    <div>
+</body>
+</html>
